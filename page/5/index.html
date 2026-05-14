@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Opengcl - Because it is there</title><meta name="author" content="snailgoers,snailgoers@hotmail.com"><meta name="copyright" content="snailgoers"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="算法,设计,学习,分享,数字图像处理,视频处理,人工智能,模式识别,大数据处理,计算几何,通用计算库,智能家居"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/gclvision.png"><link rel="canonical" href="http://yoursite.com/page/5/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=3.5.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Opengcl',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 5.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/KikiTop.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">58</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">57</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/1.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Opengcl</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Opengcl</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/snailgoers" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:snailgoers@hotmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2014/08/13/%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/" title="图像预处理之：对比度增强">图像预处理之：对比度增强</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2014-08-13T07:37:34.000Z" title="发表于 8月 13 2014 15:37:34">8月 13 2014</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">这次主要针对真彩色图像做的增强，将RGB域转为HSI域，增强I分量，达到增强效果，效果如下：代码如下：     #define MIN(a, b) ((a) &lt; (b) ? (a) : (b))     #define MAX(a, b) ((a) &gt; (b) ? (a) : (b))     #define EPS 1e-16   /// 彩色空间转换 bool RGB2HSI(uchar *imgIn, int nchannels, double *Hvector, double *Svector, double *Ivector, int width, int height) &#123;     if (imgIn == NULL || nchannels != 3)     &#123;         return false;     &#125;     int index = 0;     for (int i = 0; i &lt; width * height * nchannels; i = i + 3)     &#123;         ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2014/08/11/%E2%80%9C%E6%9D%8E%E5%A6%88%E5%A6%88%E2%80%9D%E7%89%9B%E8%82%89%E9%9D%A2/" title="“李妈妈”牛肉面">“李妈妈”牛肉面</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2014-08-11T07:39:14.000Z" title="发表于 8月 11 2014 15:39:14">8月 11 2014</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></span></div><div class="content">在李开复的自传中看到李妈妈牛肉面，当时第一时间就做了，今天大家看看我做的牛肉面吧。   牛肉面卤包做法：卤汁料包（足够用20次：麻椒2斤 香叶30g 八角150g 山奈150g 桂皮60g      白豆蔻100g 罗汉果2只，香砂120g 香菜籽60g 草果120g 丁香30g 孜然30g良姜120g    白芪50g 陈皮50g 碧波30g 小茴香90g 砂仁。 同时希望李开复老师能够安心养病，早日康复。 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2014/08/11/vs2008%E7%BC%96%E8%AF%91%E6%96%87%E4%BB%B6%E5%9C%A8%E6%B2%A1%E6%9C%89vs%E7%8E%AF%E5%A2%83%E4%B8%8A%E8%BF%90%E8%A1%8C/" title="vs2008编译程序在没有vs环境上运行">vs2008编译程序在没有vs环境上运行</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2014-08-11T07:21:16.000Z" title="发表于 8月 11 2014 15:21:16">8月 11 2014</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BA%94%E7%94%A8/">应用</a></span></div><div class="content">有的时候我们编译的dll或exe在一台没有安装vs的电脑上，无法运行，往往提示缺少必要的dll文件，这是因为我们在编译的时候选择的runtime libray 不一致导致的，     MT（Multi-threaded）：多线程版本     MTd（Multi-threaded debug）：多线程调试版本     MD（Multi-threaded Dll）：多线程Dll版本     MDd（Multi-threaded debug debug）：多线程调试Dll版本 如果需要脱离vs环境运行，需要选择第一个和第二个，但是编译出来的文件会比较大 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2014/08/08/%E4%BF%AE%E5%A4%8Dsvn%E5%9B%BE%E6%A0%87%E4%B8%8D%E6%AD%A3%E5%B8%B8bug/" title="svn 图标不正常解决之道">svn 图标不正常解决之道</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2014-08-08T08:47:08.000Z" title="发表于 8月 8 2014 16:47:08">8月 8 2014</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BA%94%E7%94%A8/">应用</a></span></div><div class="content">因为公司文件加密，加密文件图标加上dropbox图标，svn图标，几个图标之间起了冲突，一个用了另外一个又不能用，在网上收索了相应解决之道：参考，其实只要重命名你需要显示的图标靠前就行，可为啥只有11个呢，不能更多呢？  </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2014/07/29/%E8%A7%A3%E5%86%B3vs2008%E4%B8%8D%E8%83%BD%E6%99%BA%E8%83%BD%E6%8F%90%E7%A4%BA%E5%8F%8A%E6%97%A0%E6%B3%95%E8%BD%AC%E5%88%B0%E5%AE%9A%E4%B9%89/" title="vs2008 无法智能提示或转到定义">vs2008 无法智能提示或转到定义</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2014-07-29T05:52:13.000Z" title="发表于 7月 29 2014 13:52:13">7月 29 2014</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BA%94%E7%94%A8/">应用</a></span></div><div class="content">vs2008无法智能提示或无法正确转到定义，可将vs的环境重置解决，命令如下： devenv.exe /setup /resetuserdata /resetsettings </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2014/05/20/%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA%E4%B9%8B-imadjust%E8%87%AA%E5%8A%A8%E7%A1%AE%E8%AE%A4%E9%98%88%E5%80%BC/" title="图像对比度增强之-imadjust">图像对比度增强之-imadjust</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2014-05-20T06:59:16.000Z" title="发表于 5月 20 2014 14:59:16">5月 20 2014</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">图像增强，对比度拉伸时常用的一个函数，在matlab中，也有对应的函数，既imadjust，但是在实际应用中，效果并不是很理想，在下文的讨论中，就涉及到如何自动确定高低阈值，当然了这里只是针对简单的场景。如下图所示，有整体偏亮及偏暗的图 图例1######图例2### 对于这种二值划分的图像，采用图像分割的方法，分别确定两个区域的平均灰度，作为imadjust的阈值，可以达到较好的效果。如下图所示 ###图例1-Matlab默认值输出######图例1-自动确定阈值输出######图例2-Matlab默认值输出######图例2-自动确定阈值输出###  从上面的图例中不难看出，自动确认的阈值在对比度提升上更加明显，对比度更大 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2014/05/15/%E7%82%B9%E5%88%B0%E6%96%9C%E6%A4%AD%E5%9C%86%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB/" title="任意点到斜椭圆最小距离">任意点到斜椭圆最小距离</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2014-05-15T07:24:10.000Z" title="发表于 5月 15 2014 15:24:10">5月 15 2014</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">最近由于项目需求，要计算任意点到斜椭圆的距离，方程相信大家都知道怎么建立，但是它是一个4次方程，matlab都很不好解，写到程序中也很难，搜了很多帖子，都是只给方程，不给解的，其实原理大家都知道，如何用程序解才是大家关心的，所以一直都没有找到合理的答案，关键时刻还是google给力，度娘一般的东西还撮合，可学术性的、英文的确是一塌糊涂，网络上收集到这样一篇论文,我也是用这个算法最终解决我的问题的，它只使用与标准方程，斜椭圆只是多了平移和旋转操作而已。 ###第一象限中的点到标准椭圆的距离### double DistancePointEllipseSpecial(const double e[2], const double y[2], double x[2]) &#123;     double distance;     if (y[1] &gt; 0)     &#123;         if (y[0] &gt; 0)         &#123;             // bisect to compute the root of F(t) for t &gt;=...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2014/05/04/%E7%81%B0%E5%BA%A6%E5%85%B1%E7%94%9F%E7%9F%A9%E9%98%B5/" title="灰度共生矩阵（GLCM）">灰度共生矩阵（GLCM）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2014-05-04T05:22:18.000Z" title="发表于 5月 4 2014 13:22:18">5月 4 2014</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">共生矩阵用两个位置的象素的联合概率密度来定义，它不仅反映亮度的分布特性，也反映具有同样亮度或接近亮度的象素之间的位置分布特性，是有关图象亮度变化的二阶统计特征。它是定义一组纹理特征的基础。 一幅图象的灰度共生矩阵能反映出图象灰度关于方向、相邻间隔、变化幅度的综合信息，它是分析图象的局部模式和它们排列规则的基础。 设f(x,y)为一幅二维数字图象，其大小为M×N，灰度级别为Ng,则满足一定空间关系的灰度共生矩阵为 P(i,j)=#｛(x1,y1),(x2,y2)∈M×N｜f(x1,y1)=i,f(x2,y2)=j｝ 其中#(x)表示集合x中的元素个数，显然P为Ng×Ng的矩阵，若(x1,y1)与(x2,y2)间距离为d,两者与坐标横轴的夹角为θ，则可以得到各种间距及角度的灰度共生矩阵P(i,j,d,θ)。 纹理特征提取的一种有效方法是以灰度级的空间相关矩阵即共生矩阵为基础的［7］，因为图像中相距(Δx，Δy)的两个灰度像素同时出现的联合频率分布可以用灰度共生矩阵来表示。若将图像的灰度级定为N级，那么共生矩阵为N×N矩阵，可表示为M(Δx，Δy)(h,k)，其中位于(h,k)的元素m...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2014/05/04/Gray-level%20Co-occurrence%20Matrix%20%E7%81%B0%E5%BA%A6%E5%85%B1%E7%94%9F%E7%9F%A9%E9%98%B5/" title="Gray-level Co-occurrence Matrix 灰度共生矩阵">Gray-level Co-occurrence Matrix 灰度共生矩阵</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2014-05-04T05:19:31.000Z" title="发表于 5月 4 2014 13:19:31">5月 4 2014</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">灰度共生矩阵就是一种通过研究灰度的空间相关特性来描述纹理的常用方法。灰度共生矩阵是对图像上保持某距离的两象素分别具有某灰度的状况进行统计得到的。 取图像(N×N)中任意一点（x，y）及偏离它的另一点（x+a，y+b），设该点对的灰度值为（g1，g2）。令点（x，y）在整个画面上移动，则会得到各种（g1，g2）。值，设灰度值的级数为，则（g1，g2）。的组合共有 k2种。对于整个画面，统计出每一种（g1，g2）值出现的次数，然后排列成一个方阵，在用（g1，g2）出现的总次数将它们归一化为出现的概率P（g1，g2），这样的方阵称为灰度共生矩阵。距离差分值（a，b）取不同的数值组合，可以得到不同情况下的联合概率矩阵。（a，b）取值要根据纹理周期分布的特性来选择，对于较细的纹理，选取（1，0）、（1，1）、（2，0）等小的差分值。  为了能更直观地以共生矩阵描述纹理状况，从共生矩阵导出一些反映矩阵状况的参数，典型的有以下几种:  能量：是灰度共生矩阵元素值的平方和，所以也称能量，反映了图像灰度分布均匀程度和纹理粗细度。如果共生矩阵的所有值均相等，则ASM值小；相反， 如果其中一些值大而其...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2014/05/04/%E4%BD%BF%E7%94%A8matlab%E8%BF%9B%E8%A1%8Cusb%E6%91%84%E5%83%8F%E5%A4%B4%E7%BC%96%E7%A8%8B/" title="使用MATLAB进行USB摄像头的编程">使用MATLAB进行USB摄像头的编程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2014-05-04T05:10:59.000Z" title="发表于 5月 4 2014 13:10:59">5月 4 2014</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/matlab/">matlab</a></span></div><div class="content">1、查询USB2.0Camera 的具体参数(imaqhwinfo) 2、创建视频输入对象(videoinput) 3、图像预览和显示(preview、stoppreview、closepreview和image) 4、获取视频图像(getsnapshot) 5、图像获取设备的获取和设置(get和set) 6、关闭视频对象(delete)  在正式讲解之前，我想说明下几个个在图像获取工具箱中的术语： 图像获取设备：比如摄像头、扫描仪 图像获取适配器：主要的目的是通过驱动在Matlab和图像获取设备之间传递信息 ROI：region-of-interest 感兴趣区域 在说说几个常用的函数，我们这里只是说明它的作用，具体如何使用参考帮助系统 getselectedsource imaqfind isvalid peekdata getdata imaqmontage 给我们一个摄像头我们必须知道他的相关参数，才可能进行我们的编程下。当然我们可以查询商家手册，但是那个累不累人呀。 Matlab的图像获取工具箱为我提供了imaqhwinfo()，来获取PC上以安装的图像获取硬件信息 没...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/4/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#content-inner">6</a><a class="extend next" rel="next" href="/page/6/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/KikiTop.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">snailgoers</div><div class="author-info-description">算法,设计,学习,分享,数字图像处理,视频处理,人工智能,模式识别,大数据处理,计算几何,通用计算库,智能家居</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">58</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">57</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" href="mailto:snailgoers@hotmail.com || Email"><i class="fas fa-envelope"></i><span>发邮件给我</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/snailgoers" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:snailgoers@hotmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">部分图片丢失(更换服务器)，部分打开需要科学上网-_-</div></div><div class="sticky_layout"><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/gclvion/"><span class="card-category-list-name">gclvion</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/hexo/"><span class="card-category-list-name">hexo</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/matlab/"><span class="card-category-list-name">matlab</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"><span class="card-category-list-name">图像处理</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/"><span class="card-category-list-name">实用</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BA%94%E7%94%A8/"><span class="card-category-list-name">应用</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E5%AD%A6/"><span class="card-category-list-name">数学</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"><span class="card-category-list-name">机器视觉</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/05/">
+            <span class="card-archive-list-date">
+              五月 2026
+            </span>
+            <span class="card-archive-list-count">9</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2021/08/">
+            <span class="card-archive-list-date">
+              八月 2021
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2021/01/">
+            <span class="card-archive-list-date">
+              一月 2021
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2016/09/">
+            <span class="card-archive-list-date">
+              九月 2016
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2016/08/">
+            <span class="card-archive-list-date">
+              八月 2016
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2015/08/">
+            <span class="card-archive-list-date">
+              八月 2015
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2015/04/">
+            <span class="card-archive-list-date">
+              四月 2015
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2015/01/">
+            <span class="card-archive-list-date">
+              一月 2015
+            </span>
+            <span class="card-archive-list-count">6</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">58</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-05-14T13:42:10.055Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2015 - 2026 By snailgoers</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=3.5.1"></script><script src="/js/main.js?v=3.5.1"></script><script src="/js/tw_cn.js?v=3.5.1"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js@3.0.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["天行健&#44;君子以自强不息","地势坤&#44;君子以厚德载物"].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["天行健&#44;君子以自强不息","地势坤&#44;君子以厚德载物"])
+}
+typedJSFn.run(subtitleType)</script></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
